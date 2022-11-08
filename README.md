@@ -4,5 +4,5 @@ A new Flutter project.
 
 ## Screenshots
 
-![Image not Found](images/Screen_1.jpeg/?raw=true =250x "Calculating BMI")
+![Image not Found](images/Screen_1.jpeg =250x?raw=true  "Calculating BMI")
 
