@@ -137,3 +137,7 @@ class _HomeState extends State<Home> {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0cfaa95a61f5fcaf20df24d56f4cebb4daef8967
