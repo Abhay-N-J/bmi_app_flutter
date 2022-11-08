@@ -70,15 +70,15 @@ class _HomeState extends State<Home> {
             height: 100,
             width: 200,
             color: Colors.orange,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center, 
-              children: [
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               const Text("Weight"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   FloatingActionButton(
+                    // Remember to use gestured motion onTap() for same behaviour
                     onPressed: () => {
                       setState(() => {weight++})
                     },
@@ -100,34 +100,36 @@ class _HomeState extends State<Home> {
           Column(
             children: [
               ElevatedButton(
-            onPressed: () => {
-              setState(() {
-                flag = !flag;
-                bmi = (weight) / (pow((height / 100), 2));
-              })
-            },
-            style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        side: const BorderSide(color: Colors.red)))),
-            child: const Text("Calculate"),
-          ),
-          const SizedBox(
-            height: 10,
-            width: 2000,
-          ),
-          Visibility(
-              visible: flag,
-              child: SizedBox(
-                height: 100,
-                width: 100,
-                child: Text(
-                    bmi != 0 ? "     BMI: ${bmi.round().toString()}" : "",
-                    style: const TextStyle(color: Colors.redAccent)),
-              ))
+                onPressed: () => {
+                  setState(() {
+                    flag = !flag;
+                    bmi = (weight) / (pow((height / 100), 2));
+                  })
+                },
+                style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.red),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            side: const BorderSide(color: Colors.red)))),
+                child: const Text("Calculate"),
+              ),
+              const SizedBox(
+                height: 10,
+                width: 2000,
+              ),
+              Visibility(
+                  visible: flag,
+                  child: SizedBox(
+                    height: 100,
+                    width: 100,
+                    child: Text(
+                        bmi != 0 ? "     BMI: ${bmi.round().toString()}" : "",
+                        style: const TextStyle(color: Colors.redAccent)),
+                  ))
             ],
           )
         ],
