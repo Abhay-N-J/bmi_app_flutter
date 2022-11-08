@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   FloatingActionButton(
-                    // Remember to use gestured motion onTap() for same behaviour
+                    // Remember to use gestured motion onTap() for same behaviourclear
                     onPressed: () => {
                       setState(() => {weight++})
                     },
