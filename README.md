@@ -4,5 +4,5 @@ A new Flutter project.
 
 ## Screenshots
 
-<img src="images/Screen_1.jpeg" height = "100"/>
+<img src="images/Screen_1.jpeg" height = "400"/>
 
