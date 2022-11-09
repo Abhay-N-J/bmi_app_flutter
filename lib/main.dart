@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
                         fit: BoxFit.cover)),
                 child: const Home());
           },
-          SecondPage.route: (context) => SecondPage()
+          SecondPage.route: (context) => const SecondPage()
         });
   }
 }
@@ -120,7 +120,7 @@ class _HomeState extends State<Home> {
                     // Navigator.push(context,
                     //     MaterialPageRoute(builder: (context) => SecondPage(bmi:bmi)));
                     Navigator.pushNamed(context, SecondPage.route,
-                        arguments: {'bmi': bmi});
+                        arguments: Arguments(bmi));
                   },
                   style: ButtonStyle(
                       foregroundColor:

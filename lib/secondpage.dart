@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class SecondPage extends StatefulWidget {
-  // const SecondPage({super.key, required this.bmi});
+  const SecondPage({super.key});
 
   // final double bmi; This is for unnamed routing
   static const route = '/second';
@@ -13,7 +13,8 @@ class SecondPage extends StatefulWidget {
 class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-    final bmi = ModalRoute.of(context)?.settings.arguments;
+    final args = ModalRoute.of(context)!.settings.arguments as Arguments;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Result Page"),
@@ -28,7 +29,7 @@ class _SecondPageState extends State<SecondPage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               RatingBar.builder(
-                initialRating: 3,
+                initialRating: (args.bmi/40)*5,
                 itemCount: 5,
                 itemBuilder: (context, index) {
                   switch (index) {
@@ -69,7 +70,7 @@ class _SecondPageState extends State<SecondPage> {
                 },
               ),
               Text(
-                "Your BMI is ${bmi}",
+                "Your BMI is ${args.bmi.toStringAsFixed(2)}",
                 style: const TextStyle(
                   color: Colors.red,
                 ),
@@ -92,4 +93,10 @@ class _SecondPageState extends State<SecondPage> {
       ),
     );
   }
+}
+
+class Arguments {
+  final double bmi;
+
+  Arguments(this.bmi);
 }
