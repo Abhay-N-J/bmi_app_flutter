@@ -29,7 +29,7 @@ class _SecondPageState extends State<SecondPage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               RatingBar.builder(
-                initialRating: (args.bmi/40)*5,
+                initialRating: (args.bmi / 40) * 5,
                 itemCount: 5,
                 itemBuilder: (context, index) {
                   switch (index) {
